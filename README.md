@@ -14,4 +14,8 @@ For Traduit to work, make sure you're running Anki locally and have installed th
 
 Then, press the extension icon in your browser and then select the deck you want to save flashcards to.
 
-Then, visit https://wordreference.com and make a search, and you should see small orange buttons next to translation entries! When you clikc
+Then, visit https://wordreference.com and make a search, and you should see small orange buttons next to translation entries! When you click on one of these buttons, it will save the entry as a flashcard in the Anki deck you've selected!
+
+# Future TODOs:
+- [ ] Allow customization of flashcard output
+- [ ] Add support for more websites (e.g. Linguee)
