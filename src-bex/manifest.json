@@ -19,7 +19,7 @@
 	"content_scripts": [
 		{
 			"matches": ["https://*.wordreference.com/*"],
-			"js": ["www/bex-content-script.js", "js/jquery.min.js",  "js/content-script.js"],
+			"js": ["www/bex-content-script.js", "js/jquery.min.js",  "js/content-scripts/wordreference.js"],
 			"css": ["css/content-css.css"]
 		}
 	],

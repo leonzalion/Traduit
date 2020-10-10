@@ -1,5 +1,3 @@
-// Content script content goes here or in activatedContentHooks (use activatedContentHooks if you need a variable
-// accessible to both the content script and inside a hook
 $(function () {
 	const conjugationArrow = '⇒';
 	const routes = window.location.href.split('/');
@@ -139,7 +137,13 @@ $(function () {
 
 				addButton
 					.on('mouseenter', function () {
-						addButton.css('background-color', 'orangered');
+						addButton.css('background-color', '#eb8f34');
+					})
+					.on('mousedown', function() {
+						addButton.css('background-color', '#eb7a34')
+					})
+					.on('mouseup', function() {
+						addButton.css('background-color', '#eb8f34');
 					})
 					.on('mouseleave', function () {
 						addButton.css('background-color', 'orange');
