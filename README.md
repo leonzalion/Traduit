@@ -1,4 +1,4 @@
-# Traduit (traduit)
+# Traduit
 
 An app ensuring that what gets translated gets memorized.
 
@@ -10,7 +10,7 @@ yarn build
 
 Then go to the extensions page of your browser, toggle developer mode, and then press load unpacked and select `traduit/dist/bex/UnPackaged`
 
-For Traduit to work, make sure you're running Anki locally and have installed the AnkiConnect plugin for Anki.
+For Traduit to work, make sure you're running Anki locally and have installed the [AnkiConnect plugin for Anki](https://foosoft.net/projects/anki-connect/).
 
 Then, press the extension icon in your browser and then select the deck you want to save flashcards to.
 
