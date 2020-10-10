@@ -1,0 +1,12 @@
+{
+	"extends": "./tsconfig.json",
+	"include": [
+		"src",
+		"loaders",
+		".eslintrc.js",
+		"**/*.ts",
+		"**/*.js",
+		"**/*.vue",
+		"test"
+	]
+}

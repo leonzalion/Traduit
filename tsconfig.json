@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"skipLibCheck": true,
+		"allowJs": true,
+		"moduleResolution": "node",
+		"module": "esnext",
+		"removeComments": false,
+		"rootDir": ".",
+		"strict": true,
+		"noImplicitAny": true,
+		"noEmit": false,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./src/*"]
+		},
+		"types": ["node"],
+		"strictNullChecks": false,
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	}
+}
