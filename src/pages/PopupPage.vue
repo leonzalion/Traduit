@@ -1,7 +1,7 @@
 <template lang="pug">
 	q-card(style='min-width: 500px').q-pa-md.column.items-center.relative-position
+		h3.text-weight-bold.q-mt-none.q-mb-xs Traduit
 		.settings-panel.column.items-center.self-stretch(v-if='isAnkiConnectRunning === true')
-			h3.text-weight-bold.q-mt-none.q-mb-xs Settings
 			.row.items-center(style='margin-top: -2px')
 				.text-weight-bold Current Anki Deck:
 				span.q-ml-xs {{ currentlySelectedDeck.value }}
@@ -16,9 +16,9 @@
 				v-model='currentlySelectedDeck'
 				:options='ankiDecks'
 			)
-		template(v-else-if='isAnkiConnectRunning === false')
-			div We couldn't establish a connection to AnkiConnect.
-			q-btn.q-my-sm(
+		div(v-else-if='isAnkiConnectRunning === false').column.items-center.q-gutter-y-md
+			span We couldn't establish a connection to AnkiConnect.
+			q-btn(
 				no-caps
 				label='Retry'
 				:icon='matRefresh'
@@ -33,6 +33,7 @@
 			q-inner-loading(
 				showing
 			)
+		q-separator.q-my-md
 		span
 			| Traduit is an open-source project started by !{' '}
 			a(href='https://github.com/leonzalion') @leonzalion.
