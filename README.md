@@ -1,6 +1,6 @@
 # Traduit
 
-An app ensuring that what gets translated gets memorized.
+An app that allows you to easily create flashcards from popular translation websites.
 
 To run the app, clone the repo and run:
 ```shell script
