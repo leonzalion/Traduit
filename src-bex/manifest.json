@@ -29,7 +29,7 @@
 	],
 	"permissions": [
 		"https://*.wordreference.com/*",
-		"http://localhost:8765",
+		"http://localhost/*",
 		"storage",
 		"tabs",
 		"activeTab"
