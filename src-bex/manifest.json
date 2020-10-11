@@ -23,7 +23,7 @@
 			"css": ["css/content-css.css"]
 		}
 	],
-	"permissions": ["<all_urls>", "storage", "tabs", "activeTab"],
+	"permissions": ["https://*.wordreference.com/*", "storage", "tabs", "activeTab"],
 	"web_accessible_resources": ["www/*", "js/*", "css/*", "<all_urls>"],
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
 }
