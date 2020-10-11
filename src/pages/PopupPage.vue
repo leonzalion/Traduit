@@ -22,7 +22,8 @@
 				no-caps
 				label='Retry'
 				:icon='matRefresh'
-				@click='checkAnkiConnect'
+				:loading='isRetryLoading'
+				@click='checkAnkiConnectWithLoading'
 			)
 			div.text-center
 				| Make sure to follow the instructions at !{' '}
@@ -42,8 +43,13 @@
 </template>
 
 <script>
-import { defineComponent, watch, watchEffect, ref, onMounted } from
-		'@vue/composition-api';
+import {
+	defineComponent,
+	watch,
+	watchEffect,
+	ref,
+	onMounted,
+} from '@vue/composition-api';
 import { matRefresh, matInfo } from '@quasar/extras/material-icons';
 
 export default defineComponent({
@@ -52,24 +58,37 @@ export default defineComponent({
 		const currentlySelectedDeck = ref();
 		const ankiDecks = ref([]);
 		const isAnkiConnectRunning = ref(null);
+		const isRetryLoading = ref(false);
 
-		function checkAnkiConnect() {
-			chrome.runtime.sendMessage(
-				{ action: 'CHECK_ANKICONNECT' },
-				(isConnected) => {
-					isAnkiConnectRunning.value = isConnected;
-				}
-			);
+		async function checkAnkiConnect() {
+			return new Promise((resolve) => {
+				chrome.runtime.sendMessage(
+					{ action: 'CHECK_ANKICONNECT' },
+					(isConnected) => {
+						isAnkiConnectRunning.value = isConnected;
+						resolve();
+					}
+				);
+			});
 		}
 		checkAnkiConnect();
 
+		async function checkAnkiConnectWithLoading() {
+			try {
+				isRetryLoading.value = true;
+				await checkAnkiConnect();
+			} finally {
+				isRetryLoading.value = false;
+			}
+		}
+
 		onMounted(() => {
-			const links = document.getElementsByTagName("a");
+			const links = document.getElementsByTagName('a');
 			for (let i = 0; i < links.length; i += 1) {
 				const ln = links[i];
 				const location = ln.href;
 				ln.onclick = () => {
-					chrome.tabs.create({active: true, url: location});
+					chrome.tabs.create({ active: true, url: location });
 				};
 			}
 		});
@@ -104,8 +123,9 @@ export default defineComponent({
 		return {
 			currentlySelectedDeck,
 			ankiDecks,
-			checkAnkiConnect,
+			checkAnkiConnectWithLoading,
 			isAnkiConnectRunning,
+			isRetryLoading,
 
 			matRefresh,
 			matInfo,
