@@ -1,6 +1,6 @@
 # Traduit
 
-An app that allows you to easily create flashcards from popular translation websites.
+An app that allows you to easily create Anki flashcards from popular translation websites.
 
 To run the app, clone the repo and run:
 ```shell script
