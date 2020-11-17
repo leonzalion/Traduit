@@ -19,6 +19,7 @@ Then, visit https://wordreference.com and make a search, and you should see smal
 # Future TODOs:
 - [ ] Allow customization of flashcard output
 - [ ] Add support for more websites (e.g. Linguee)
+- [ ] Add an error message that appears when adding the card fails
 
 # Credits
 Thanks to https://github.com/Togohogo1 for the logo!
